@@ -1,9 +1,9 @@
 {
-  "name": "ng2-your-library",
-  "version": "0.0.0",
-  "description": "Your library description.",
+  "name": "ng2-iq-bootstraptable",
+  "version": "0.0.1",
+  "description": "Angular 2 table based on bootstrap and webservices paginated requests",
   "repository": {
-    "url": "https://github.com/preboot/angular2-library-seed"
+    "url": "https://github.com/diegofsza/iq-bootstrap-table"
   },
   "license": "MIT",
   "scripts": {
