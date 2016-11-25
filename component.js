@@ -1,8 +1,8 @@
 "use strict";
 var table_component_1 = require('./src/app/components/table/table.component');
 exports.TableComponent = table_component_1.TableComponent;
-var footer_component_1 = require('./src/app/components/footer/footer.component');
-exports.FooterComponent = footer_component_1.FooterComponent;
+var tablefooter_component_1 = require('./src/app/components/footer/tablefooter.component');
+exports.TableFooterComponent = tablefooter_component_1.TableFooterComponent;
 var data_request_config_1 = require('./src/app/components/data-request-config');
 exports.DataRequestConfig = data_request_config_1.DataRequestConfig;
 var header_item_1 = require('./src/app/components/header-item');

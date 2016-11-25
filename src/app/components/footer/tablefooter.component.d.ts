@@ -1,6 +1,6 @@
 import { OnInit, EventEmitter } from '@angular/core';
 import { PaginatedResults } from '../paginated-results';
-export declare class FooterComponent implements OnInit {
+export declare class TableFooterComponent implements OnInit {
     paginatedResults: PaginatedResults<any>;
     onPageClicked: EventEmitter<number>;
     private currentPage;

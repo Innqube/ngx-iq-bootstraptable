@@ -1,7 +1,7 @@
 "use strict";
 const core_1 = require('@angular/core');
 const PAGES_LIMIT = 6;
-class FooterComponent {
+class TableFooterComponent {
     constructor() {
         this.onPageClicked = new core_1.EventEmitter();
         this.currentPage = 0;
@@ -68,17 +68,17 @@ class FooterComponent {
         return this.currentPage;
     }
 }
-FooterComponent.decorators = [
+TableFooterComponent.decorators = [
     { type: core_1.Component, args: [{
                 selector: 'iq-bt-footer',
-                templateUrl: './footer.component.html',
-                styleUrls: ['./footer.component.css']
+                templateUrl: './tablefooter.component.html',
+                styleUrls: ['./tablefooter.component.css']
             },] },
 ];
-FooterComponent.ctorParameters = [];
-FooterComponent.propDecorators = {
+TableFooterComponent.ctorParameters = [];
+TableFooterComponent.propDecorators = {
     'paginatedResults': [{ type: core_1.Input },],
     'onPageClicked': [{ type: core_1.Output },],
 };
-exports.FooterComponent = FooterComponent;
-//# sourceMappingURL=footer.component.js.map
+exports.TableFooterComponent = TableFooterComponent;
+//# sourceMappingURL=tablefooter.component.js.map

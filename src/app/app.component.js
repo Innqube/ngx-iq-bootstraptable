@@ -3,8 +3,6 @@ const core_1 = require('@angular/core');
 require('../style/app.scss');
 class AppComponent {
     constructor() {
-        this.pipeTest = 'Create an amazing community by contributing a library';
-        this.url = 'https://github.com/preboot/angular2-library-seed';
     }
 }
 AppComponent.decorators = [
