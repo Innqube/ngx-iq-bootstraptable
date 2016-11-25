@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from '../../src/app/app.component';
 
 describe('App', () => {
   // provide our implementations or mocks to the dependency injector

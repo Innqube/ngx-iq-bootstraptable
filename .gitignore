@@ -4,6 +4,7 @@
 /dist
 /tmp
 /lib
+/aot
 
 # dependencies
 /node_modules

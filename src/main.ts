@@ -1,6 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { BootstrapTableModule } from './app/bootstraptable.module';
 
 // depending on the env mode, enable prod mode or add debugging modules
 if (process.env.ENV === 'build') {
@@ -8,7 +8,7 @@ if (process.env.ENV === 'build') {
 }
 
 export function main() {
-  return platformBrowserDynamic().bootstrapModule(AppModule);
+  return platformBrowserDynamic().bootstrapModule(BootstrapTableModule);
 }
 
 if (document.readyState === 'complete') {
