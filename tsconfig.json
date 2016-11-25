@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noEmitHelpers": true,
+    "outDir": "../lib",
+    "removeComments": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "types": [
+      "core-js"
+    ]
+  },
+  "files": [
+    "component.d.ts",
+    "src/app/app.component.ts",
+    "src/app/app.module.ts",
+    "src/app/components/footer/footer.component.ts",
+    "src/app/components/table/table.component.spec.ts",
+    "src/app/components/data-request-config.ts",
+    "src/app/components/header-item.ts",
+    "src/app/components/paginated-results.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "bundles"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  }
+}
