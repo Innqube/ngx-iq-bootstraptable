@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PaginatedResults } from '../paginated-results';
 
-const PAGES_LIMIT: number = 6;
+const PAGES_LIMIT = 6;
 
 @Component({
   selector: 'iq-bt-footer',

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ContentChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ContentChild } from '@angular/core';
 import { PaginatedResults } from '../paginated-results';
 import { DataRequestConfig } from '../data-request-config';
 import { HeaderItem } from '../header-item';
@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
   @Output() private onLoadData = new EventEmitter<DataRequestConfig>();
   @ContentChild('rows') private rows: any;
 
-  private currentPage: number = 0;  
+  private currentPage: number = 0;
   private sortProp: string;
   private sortDirection: 'asc' | 'desc';
 

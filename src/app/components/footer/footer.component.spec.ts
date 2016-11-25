@@ -20,6 +20,7 @@ describe('FooterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
+    component.paginatedResults = new PaginatedResults<any>();
     fixture.detectChanges();
   });
 

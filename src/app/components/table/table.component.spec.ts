@@ -3,10 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { PaginatedResults } from '../paginated-results';
-import { DataRequestConfig } from '../data-request-config';
-import { HeaderItem } from '../header-item';
 
 import { TableComponent } from './table.component';
+import { FooterComponent } from '../footer/footer.component';
 
 describe('TableComponent', () => {
   let component: TableComponent;
@@ -14,7 +13,7 @@ describe('TableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableComponent, PaginatedResults ]
+      declarations: [ TableComponent, FooterComponent ]
     })
     .compileComponents();
   }));
@@ -23,8 +22,6 @@ describe('TableComponent', () => {
     fixture = TestBed.createComponent(TableComponent);
     component = fixture.componentInstance;
     component.paginatedResults = new PaginatedResults<any>();
-    component.headerItems = [];
-    component.pageSize = 5;
     fixture.detectChanges();
   });
 
