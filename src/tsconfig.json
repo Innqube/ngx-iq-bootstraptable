@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noEmitHelpers": true,
+    "outDir": "../lib",
+    "removeComments": true,
+    "moduleResolution": "node"
+  },
+  "files": [
+    "ng2-iq-bootstraptable.ts",
+    "./app/app.component.ts",
+    "./app/app.module.ts",
+    "./app/components/footer/footer.component.ts",
+    "./app/components/table/table.component.spec.ts",
+    "./app/components/data-request-config.ts",
+    "./app/components/header-item.ts",
+    "./app/components/paginated-results.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "bundles"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  }
+}
