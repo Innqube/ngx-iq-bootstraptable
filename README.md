@@ -1,3 +1,7 @@
+
+# NG2-IQ-BOOSTRAP TABLE
+[![InnQUbe](http://www.innqube.com/powered-by-innqube.png)](http://www.innqube.com/)
+
 Angular 2 table based on bootstrap and webservices paginated requests 
 
 Usage example:
