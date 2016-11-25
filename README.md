@@ -4,6 +4,9 @@
 
 https://david-dm.org/Innqube/iq-bootstrap-table.svg
 
+[![Dependency Status](https://david-dm.org/Innqube/iq-bootstrap-table.svg)](https://david-dm.org/Innqube/iq-bootstrap-table)
+[![devDependency Status](https://david-dm.org/Innqube/iq-bootstrap-table/dev-status.svg)](https://david-dm.org/Innqube/iq-bootstrap-table#info=devDependencies)
+
 Angular 2 table based on bootstrap and webservices paginated requests 
 
 Usage example:
