@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { TableFooterComponent } from './components/footer/tablefooter.component';
 
 import { DataRequestConfig } from './components/data-request-config';
 import { PaginatedResults } from './components/paginated-results';
@@ -16,10 +16,7 @@ import { HeaderItem } from './components/header-item';
   declarations: [
     AppComponent,
     TableComponent,
-    FooterComponent,
-    DataRequestConfig,
-    PaginatedResults,
-    HeaderItem
+    TableFooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

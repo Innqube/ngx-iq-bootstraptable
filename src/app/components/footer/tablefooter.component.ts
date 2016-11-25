@@ -5,10 +5,10 @@ const PAGES_LIMIT = 6;
 
 @Component({
   selector: 'iq-bt-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  templateUrl: './tablefooter.component.html',
+  styleUrls: ['./tablefooter.component.css']
 })
-export class FooterComponent implements OnInit {
+export class TableFooterComponent implements OnInit {
 
   @Input() paginatedResults: PaginatedResults<any>;
   @Output() onPageClicked: EventEmitter<number> = new EventEmitter<number>();

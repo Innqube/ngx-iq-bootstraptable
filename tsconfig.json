@@ -21,7 +21,7 @@
     "component.d.ts",
     "src/app/app.component.ts",
     "src/app/bootstraptable.module.ts",
-    "src/app/components/footer/footer.component.ts",
+    "src/app/components/footer/tablefooter.component.ts",
     "src/app/components/data-request-config.ts",
     "src/app/components/header-item.ts",
     "src/app/components/paginated-results.ts"
