@@ -15,7 +15,7 @@
               <span aria-hidden="true">&laquo;</span>
             </a>
           </li>
-          <li *ngFor="let item of getPages()" [class.active]="item === getCurrentPage() + 1"><a href="#" (click)="pageClicked(item)">{{item}}</a></li>
+          <li *ngFor="let item of getPages()" [class.active]="item === getCurrentPage() + 1"><a (click)="pageClicked(item)">{{item}}</a></li>
           <li>
             <a (click)="onNextClicked()" aria-label="Next" *ngIf="isNextPageVisible()">
               <span aria-hidden="true">&raquo;</span>
