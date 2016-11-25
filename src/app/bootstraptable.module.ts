@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { DataRequestConfig } from './components/data-request-config';
+import { PaginatedResults } from './components/paginated-results';
+import { HeaderItem } from './components/header-item';
+
 @NgModule({
   imports: [
     BrowserModule
@@ -12,7 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
   declarations: [
     AppComponent,
     TableComponent,
-    FooterComponent
+    FooterComponent,
+    DataRequestConfig,
+    PaginatedResults,
+    HeaderItem
   ],
   providers: [],
   bootstrap: [AppComponent]
