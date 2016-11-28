@@ -1,3 +1,11 @@
+
+# NG2 IQ-BOOSTRAP-TABLE
+[![InnQUbe](http://www.innqube.com/powered-by-innqube.png)](http://www.innqube.com/)
+
+[![Dependency Status](https://david-dm.org/Innqube/iq-bootstrap-table.svg)](https://david-dm.org/Innqube/iq-bootstrap-table)
+[![devDependency Status](https://david-dm.org/Innqube/iq-bootstrap-table/dev-status.svg)](https://david-dm.org/Innqube/iq-bootstrap-table#info=devDependencies)
+[![Code Climate](https://codeclimate.com/github/Innqube/iq-bootstrap-table/badges/gpa.svg)](https://codeclimate.com/github/Innqube/iq-bootstrap-table)
+
 Angular 2 table based on bootstrap and webservices paginated requests 
 
 Usage example:
