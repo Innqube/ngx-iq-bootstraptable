@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs/Rx';
+import { PaginatedResults } from './components/paginated-results';
 
 export class Person {
     id: number;
@@ -517,7 +518,7 @@ export class MockDataService {
 
     }
 
-    public listPersons(from: number, count: number, sort: string, order: string): Observable<Person[]> {
+    public listPersons(from: number, count: number, sort: string, order: string): Observable<PaginatedResults<Person>> {
         if (sort !== undefined) {
             this.persons.sort((person1: Person, person2: Person) => {
                 if ('asc' === order) {
@@ -539,7 +540,14 @@ export class MockDataService {
             });
         }
         let result = this.persons.slice(from, from + count);
-        return Observable.of(result);
+
+        let pr = new PaginatedResults<Person>();
+        pr.count = 100;
+        pr.cursor = from;
+        pr.pageSize = count;
+        pr.results = result;
+
+        return Observable.of(pr);
     }
 
 }

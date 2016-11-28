@@ -39,13 +39,6 @@ export class AppComponent {
     this
       .mockDataService
       .listPersons(drc.firstResult, drc.count, drc.orderBy[0].property, drc.orderBy[0].direction)
-      .subscribe((persons: Person[]) => {
-        let pr = new PaginatedResults<Person>();
-        pr.count = 100;
-        pr.cursor = drc.firstResult;
-        pr.pageSize = 15;
-        pr.results = persons;
-        this.paginatedResults = pr;
-      });
+      .subscribe((paginatedResults: PaginatedResults<Person>) => this.paginatedResults = paginatedResults);
   }
 }
