@@ -1,1 +1,12 @@
-<h1>Aloha!</h1>
+<div class="container">
+    <iq-bt-table (onLoadData)="loadData($event)" [paginatedResults]="paginatedResults" [headerItems]="headerItems" [pageSize]=5>
+        <template #rows let-item="$implicit" let-i="index">
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.firstname}}</td>
+                <td>{{item.lastname}}</td>
+                <td>{{item.email}}</td>
+            </tr>
+        </template>
+    </iq-bt-table>
+</div>

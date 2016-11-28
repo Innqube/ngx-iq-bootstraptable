@@ -9,6 +9,8 @@ import { DataRequestConfig } from './components/data-request-config';
 import { PaginatedResults } from './components/paginated-results';
 import { HeaderItem } from './components/header-item';
 
+import { MockDataService } from './mock-data.service';
+
 @NgModule({
   imports: [
     BrowserModule
@@ -18,7 +20,7 @@ import { HeaderItem } from './components/header-item';
     TableComponent,
     TableFooterComponent
   ],
-  providers: [],
+  providers: [MockDataService],
   bootstrap: [AppComponent]
 })
 export class BootstrapTableModule {
