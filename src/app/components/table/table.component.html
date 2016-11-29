@@ -1,13 +1,13 @@
 <table class="table">
     <thead>
         <tr>
-            <th *ngFor="let headerItem of headerItems">
-                <div *ngIf="headerItem.prop !== undefined">
+            <th *ngFor="let headerItem of headerItems" class="header">
+                <div *ngIf="headerItem.prop !== undefined" class="sortable">
                     <a (click)="sort(headerItem.prop)">
                     {{headerItem.name}}
                 </a>
-                    <i class="glyphicon glyphicon-menu-up" *ngIf="sortProp === headerItem.prop && sortDirection === 'asc'"></i>
-                    <i class="glyphicon glyphicon-menu-down" *ngIf="sortProp === headerItem.prop && sortDirection === 'desc'"></i>
+                    <i class="glyphicon glyphicon-chevron-up icon" *ngIf="sortProp === headerItem.prop && sortDirection === 'asc'"></i>
+                    <i class="glyphicon gglyphicon-chevron-down orderIcon" *ngIf="sortProp === headerItem.prop && sortDirection === 'desc'"></i>
                 </div>
 
                 <div *ngIf="headerItem.prop === undefined">
