@@ -22,7 +22,10 @@ import { MockDataService } from './mock-data.service';
     TableFooterComponent
   ],
   providers: [MockDataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    TableComponent, TableFooterComponent
+  ]
 })
 export class BootstrapTableModule {
   constructor() {}

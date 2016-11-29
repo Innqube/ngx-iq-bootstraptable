@@ -11,4 +11,6 @@ var paginated_results_1 = require('./src/app/components/paginated-results');
 exports.PaginatedResults = paginated_results_1.PaginatedResults;
 var bootstraptable_module_1 = require('./src/app/bootstraptable.module');
 exports.BootstrapTableModule = bootstraptable_module_1.BootstrapTableModule;
+var footer_legend_1 = require('./src/app/components/footer/footer-legend');
+exports.FooterLegend = footer_legend_1.FooterLegend;
 //# sourceMappingURL=component.js.map
