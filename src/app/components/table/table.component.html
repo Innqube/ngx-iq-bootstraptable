@@ -22,4 +22,4 @@
         <template ngFor [ngForOf]="paginatedResults.results" [ngForTemplate]="rows"></template>
     </tbody>
 </table>
-<iq-bt-footer [paginatedResults]="paginatedResults" (onPageClicked)="onPageClicked($event)"></iq-bt-footer>
+<iq-bt-footer [paginatedResults]="paginatedResults" (onPageClicked)="onPageClicked($event)" [footerLegend]="footerLegend"></iq-bt-footer>

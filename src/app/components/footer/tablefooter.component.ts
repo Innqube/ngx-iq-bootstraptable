@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PaginatedResults } from '../paginated-results';
+import { FooterLegend } from './footer-legend';
 
 const PAGES_LIMIT = 6;
 
@@ -13,6 +14,7 @@ export class TableFooterComponent implements OnInit {
   @Input() paginatedResults: PaginatedResults<any>;
   @Output() onPageClicked: EventEmitter<number> = new EventEmitter<number>();
   private currentPage = 0;
+  @Input() footerLegend: FooterLegend;
 
   constructor() { }
 

@@ -3,6 +3,7 @@ import { MockDataService, Person } from './mock-data.service';
 import { DataRequestConfig } from './components/data-request-config';
 import { HeaderItem } from './components/header-item';
 import { PaginatedResults } from './components/paginated-results';
+import { FooterLegend } from './components/footer/footer-legend';
 
 import '../style/app.scss';
 
@@ -30,6 +31,11 @@ export class AppComponent {
       prop: 'email'
     }
   ];
+  private footerLegend: FooterLegend = {
+    showingResults: 'Mostrando resultados',
+    of: 'de',
+    to: 'al'
+  };
 
   constructor(
     private mockDataService: MockDataService

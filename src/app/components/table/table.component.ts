@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ContentChild } from '@a
 import { PaginatedResults } from '../paginated-results';
 import { DataRequestConfig } from '../data-request-config';
 import { HeaderItem } from '../header-item';
+import { FooterLegend } from '../footer/footer-legend';
 
 @Component({
   selector: 'iq-bt-table',
@@ -13,6 +14,11 @@ export class TableComponent implements OnInit {
   @Input() paginatedResults: PaginatedResults<any>;
   @Input() headerItems: HeaderItem[] = [];
   @Input() pageSize: number;
+  @Input() footerLegend: FooterLegend = {
+    showingResults: 'Showing results',
+    of: 'of',
+    to: 'to'
+  };
   @Output() private onLoadData = new EventEmitter<DataRequestConfig>();
   @ContentChild('rows') private rows: any;
 
