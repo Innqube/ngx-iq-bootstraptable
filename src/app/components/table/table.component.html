@@ -1,6 +1,6 @@
 <table class="table">
     <thead>
-        <tr>
+        <tr class="header">
             <th *ngFor="let headerItem of headerItems">
                 <div *ngIf="headerItem.prop !== undefined">
                     <a (click)="sort(headerItem.prop)">
