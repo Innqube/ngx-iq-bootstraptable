@@ -24,7 +24,7 @@
     "src/app/bootstraptable.module.ts",
     "src/app/components/footer/tablefooter.component.ts",
     "src/app/components/data-request-config.ts",
-    "src/app/components/header-item.ts",
+    "src/app/components/bootstrap-table-column.ts",
     "src/app/components/paginated-results.ts"
   ],
   "exclude": [

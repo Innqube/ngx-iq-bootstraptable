@@ -7,7 +7,7 @@ import { TableFooterComponent } from './components/footer/tablefooter.component'
 
 import { DataRequestConfig } from './components/data-request-config';
 import { PaginatedResults } from './components/paginated-results';
-import { HeaderItem } from './components/header-item';
+import { BootstrapTableColumn } from './components/bootstrap-table-column';
 
 import { MockDataService } from './mock-data.service';
 

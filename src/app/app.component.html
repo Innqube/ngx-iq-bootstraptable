@@ -1,5 +1,5 @@
 <div class="container">
-    <iq-bt-table (onLoadData)="loadData($event)" [paginatedResults]="paginatedResults" [headerItems]="headerItems" [pageSize]=5 [footerLegend]="footerLegend">
+    <iq-bt-table (onLoadData)="loadData($event)" [paginatedResults]="paginatedResults" [columns]="columns" [pageSize]=5 [footerLegend]="footerLegend">
         <template #rows let-item="$implicit" let-i="index">
             <tr>
                 <td>{{item.id}}</td>

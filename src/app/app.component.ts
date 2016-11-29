@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MockDataService, Person } from './mock-data.service';
 import { DataRequestConfig } from './components/data-request-config';
-import { HeaderItem } from './components/header-item';
+import { BootstrapTableColumn } from './components/bootstrap-table-column';
 import { PaginatedResults } from './components/paginated-results';
 import { FooterLegend } from './components/footer/footer-legend';
 
@@ -16,7 +16,7 @@ export class AppComponent {
 
   private paginatedResults: PaginatedResults<Person>;
   private pageSize: number;
-  private headerItems: HeaderItem[] = [
+  private columns: BootstrapTableColumn[] = [
     {
       name: 'Id',
       prop: 'id',

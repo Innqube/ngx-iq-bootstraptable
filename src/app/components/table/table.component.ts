@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ContentChild } from '@angular/core';
 import { PaginatedResults } from '../paginated-results';
 import { DataRequestConfig } from '../data-request-config';
-import { HeaderItem } from '../header-item';
+import { BootstrapTableColumn } from '../bootstrap-table-column';
 import { FooterLegend } from '../footer/footer-legend';
 
 @Component({
@@ -12,7 +12,7 @@ import { FooterLegend } from '../footer/footer-legend';
 export class TableComponent implements OnInit {
 
   @Input() paginatedResults: PaginatedResults<any>;
-  @Input() headerItems: HeaderItem[] = [];
+  @Input() columns: BootstrapTableColumn[] = [];
   @Input() pageSize: number;
   @Input() footerLegend: FooterLegend = {
     showingResults: 'Showing results',

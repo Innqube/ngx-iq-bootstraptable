@@ -1,18 +1,18 @@
 <table class="table">
     <thead>
         <tr class="header">
-            <th *ngFor="let headerItem of headerItems" [style.width]="headerItem.width + '' + headerItem.widthUnit + ''">
-                <div *ngIf="headerItem.prop !== undefined">
-                    <a (click)="sort(headerItem.prop)">
-                    {{headerItem.name}}
+            <th *ngFor="let column of columns" [style.width]="column.width + '' + column.widthUnit + ''">
+                <div *ngIf="column.prop !== undefined">
+                    <a (click)="sort(column.prop)">
+                    {{column.name}}
                 </a>
-                    <i class="glyphicon glyphicon-menu-up" *ngIf="sortProp === headerItem.prop && sortDirection === 'asc'"></i>
-                    <i class="glyphicon glyphicon-menu-down" *ngIf="sortProp === headerItem.prop && sortDirection === 'desc'"></i>
+                    <i class="glyphicon glyphicon-menu-up" *ngIf="sortProp === column.prop && sortDirection === 'asc'"></i>
+                    <i class="glyphicon glyphicon-menu-down" *ngIf="sortProp === column.prop && sortDirection === 'desc'"></i>
                 </div>
 
-                <div *ngIf="headerItem.prop === undefined">
+                <div *ngIf="column.prop === undefined">
                     <span>
-                        {{headerItem.name}}
+                        {{column.name}}
                     </span>
                 </div>
             </th>

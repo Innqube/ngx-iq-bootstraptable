@@ -1,4 +1,4 @@
-export class HeaderItem {
+export class BootstrapTableColumn {
 
     name: string;
     prop: string;
