@@ -20,7 +20,10 @@ BootstrapTableModule.decorators = [
                     tablefooter_component_1.TableFooterComponent
                 ],
                 providers: [mock_data_service_1.MockDataService],
-                bootstrap: [app_component_1.AppComponent]
+                bootstrap: [app_component_1.AppComponent],
+                exports: [
+                    table_component_1.TableComponent, tablefooter_component_1.TableFooterComponent
+                ]
             },] },
 ];
 BootstrapTableModule.ctorParameters = [];
