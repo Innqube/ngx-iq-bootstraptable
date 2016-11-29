@@ -1,16 +1,16 @@
 import { NgModule, ModuleWithProviders } from "@angular/core";
 import { TableComponent } from './app/components/table/table.component';
-import { FooterComponent } from './app/components/footer/footer.component';
+import { TableFooterComponent } from './app/components/footer/tablefooter.component';
 
 
 // for manual imports
 export * from './app/components/table/table.component';
-export * from './app/components/footer/footer.component';
+export * from './app/components/footer/tablefooter.component';
 
 @NgModule({
   declarations: [
     TableComponent,
-    FooterComponent
+    TableFooterComponent
   ],
   providers: [],
   exports: [
