@@ -1,9 +1,11 @@
 import { OnInit, EventEmitter } from '@angular/core';
 import { PaginatedResults } from '../paginated-results';
+import { FooterLegend } from './footer-legend';
 export declare class TableFooterComponent implements OnInit {
     paginatedResults: PaginatedResults<any>;
     onPageClicked: EventEmitter<number>;
     private currentPage;
+    footerLegend: FooterLegend;
     constructor();
     ngOnInit(): void;
     getPageBeginning(): number;
@@ -11,10 +13,10 @@ export declare class TableFooterComponent implements OnInit {
     getTotal(): number;
     getPages(): number[];
     getTotalPages(): number;
-    isPreviousPageVisible(): boolean;
-    isNextPageVisible(): boolean;
+    isFirstPageVisible(): boolean;
+    isLastPageVisible(): boolean;
     pageClicked(page: number): void;
-    onPreviousClicked(): void;
-    onNextClicked(): void;
+    onFirstClicked(): void;
+    onLastClicked(): void;
     getCurrentPage(): number;
 }

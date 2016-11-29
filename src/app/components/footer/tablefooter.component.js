@@ -44,11 +44,11 @@ class TableFooterComponent {
     getTotalPages() {
         return Math.ceil((this.getTotal() / this.paginatedResults.pageSize));
     }
-    isPreviousPageVisible() {
+    isFirstPageVisible() {
         let currentPage = this.getCurrentPage();
         return currentPage > PAGES_LIMIT / 2 && this.getTotalPages() > PAGES_LIMIT;
     }
-    isNextPageVisible() {
+    isLastPageVisible() {
         let totalPages = this.getTotalPages();
         return totalPages - this.currentPage > PAGES_LIMIT / 2 && totalPages > PAGES_LIMIT;
     }
@@ -56,12 +56,12 @@ class TableFooterComponent {
         this.currentPage = page - 1;
         this.onPageClicked.emit(page - 1);
     }
-    onPreviousClicked() {
-        this.currentPage--;
-        this.onPageClicked.emit(0);
+    onFirstClicked() {
+        this.currentPage = 0;
+        this.onPageClicked.emit(this.currentPage);
     }
-    onNextClicked() {
-        this.currentPage++;
+    onLastClicked() {
+        this.currentPage = this.getTotalPages() - 1;
         this.onPageClicked.emit(this.currentPage);
     }
     getCurrentPage() {
@@ -79,6 +79,7 @@ TableFooterComponent.ctorParameters = [];
 TableFooterComponent.propDecorators = {
     'paginatedResults': [{ type: core_1.Input },],
     'onPageClicked': [{ type: core_1.Output },],
+    'footerLegend': [{ type: core_1.Input },],
 };
 exports.TableFooterComponent = TableFooterComponent;
 //# sourceMappingURL=tablefooter.component.js.map

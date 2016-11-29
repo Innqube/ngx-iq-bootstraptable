@@ -4,7 +4,12 @@ const paginated_results_1 = require('../paginated-results');
 const data_request_config_1 = require('../data-request-config');
 class TableComponent {
     constructor() {
-        this.headerItems = [];
+        this.columns = [];
+        this.footerLegend = {
+            showingResults: 'Showing results',
+            of: 'of',
+            to: 'to'
+        };
         this.onLoadData = new core_1.EventEmitter();
         this.currentPage = 0;
     }
@@ -50,8 +55,9 @@ TableComponent.decorators = [
 TableComponent.ctorParameters = [];
 TableComponent.propDecorators = {
     'paginatedResults': [{ type: core_1.Input },],
-    'headerItems': [{ type: core_1.Input },],
+    'columns': [{ type: core_1.Input },],
     'pageSize': [{ type: core_1.Input },],
+    'footerLegend': [{ type: core_1.Input },],
     'onLoadData': [{ type: core_1.Output },],
     'rows': [{ type: core_1.ContentChild, args: ['rows',] },],
 };

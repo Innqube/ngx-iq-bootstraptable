@@ -1,11 +1,13 @@
 import { OnInit } from '@angular/core';
 import { PaginatedResults } from '../paginated-results';
 import { DataRequestConfig } from '../data-request-config';
-import { HeaderItem } from '../header-item';
+import { BootstrapTableColumn } from '../bootstrap-table-column';
+import { FooterLegend } from '../footer/footer-legend';
 export declare class TableComponent implements OnInit {
     paginatedResults: PaginatedResults<any>;
-    headerItems: HeaderItem[];
+    columns: BootstrapTableColumn[];
     pageSize: number;
+    footerLegend: FooterLegend;
     private onLoadData;
     private rows;
     private currentPage;

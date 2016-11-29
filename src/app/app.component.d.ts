@@ -4,7 +4,9 @@ import '../style/app.scss';
 export declare class AppComponent {
     private mockDataService;
     private paginatedResults;
-    private headerItems;
+    private pageSize;
+    private columns;
+    private footerLegend;
     constructor(mockDataService: MockDataService);
     loadData(drc: DataRequestConfig): void;
 }
