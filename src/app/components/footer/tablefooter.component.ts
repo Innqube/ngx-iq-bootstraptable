@@ -63,12 +63,12 @@ export class TableFooterComponent implements OnInit {
     return Math.ceil((this.getTotal() / this.paginatedResults.pageSize));
   }
 
-  isPreviousPageVisible(): boolean {
+  isFirstPageVisible(): boolean {
     let currentPage = this.getCurrentPage();
     return currentPage > PAGES_LIMIT / 2 && this.getTotalPages() > PAGES_LIMIT;
   }
 
-  isNextPageVisible(): boolean {
+  isLastPageVisible(): boolean {
     let totalPages = this.getTotalPages();
     return totalPages - this.currentPage > PAGES_LIMIT / 2 && totalPages > PAGES_LIMIT;
   }
@@ -78,13 +78,13 @@ export class TableFooterComponent implements OnInit {
     this.onPageClicked.emit(page - 1);
   }
 
-  onPreviousClicked() {
-    this.currentPage--;
-    this.onPageClicked.emit(0);
+  onFirstClicked() {
+    this.currentPage = 0;
+    this.onPageClicked.emit(this.currentPage);
   }
 
-  onNextClicked() {
-    this.currentPage++;
+  onLastClicked() {
+    this.currentPage = this.getTotalPages() - 1;
     this.onPageClicked.emit(this.currentPage);
   }
 
