@@ -1,5 +1,5 @@
 
-# NG2 IQ-BOOSTRAP-TABLE
+# NG2 IQ-BOOTSTRAP-TABLE
 [![InnQUbe](http://www.innqube.com/powered-by-innqube.png)](http://www.innqube.com/)
 
 [![Dependency Status](https://david-dm.org/Innqube/iq-bootstrap-table.svg)](https://david-dm.org/Innqube/iq-bootstrap-table)
