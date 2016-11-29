@@ -19,16 +19,24 @@ export class AppComponent {
   private headerItems: HeaderItem[] = [
     {
       name: 'Id',
-      prop: 'id'
+      prop: 'id',
+      width: 10,
+      widthUnit: '%'
     }, {
       name: 'First name',
-      prop: 'firstname'
+      prop: 'firstname',
+      width: 30,
+      widthUnit: '%'
     }, {
       name: 'Last name',
-      prop: 'lastname'
+      prop: 'lastname',
+      width: 30,
+      widthUnit: '%'
     }, {
       name: 'E-Mail',
-      prop: 'email'
+      prop: 'email',
+      width: 30,
+      widthUnit: '%'
     }
   ];
   private footerLegend: FooterLegend = {

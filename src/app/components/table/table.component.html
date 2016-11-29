@@ -1,7 +1,7 @@
 <table class="table">
     <thead>
         <tr class="header">
-            <th *ngFor="let headerItem of headerItems">
+            <th *ngFor="let headerItem of headerItems" [style.width]="headerItem.width + '' + headerItem.widthUnit + ''">
                 <div *ngIf="headerItem.prop !== undefined">
                     <a (click)="sort(headerItem.prop)">
                     {{headerItem.name}}
