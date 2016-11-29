@@ -25,14 +25,10 @@ Usage example:
         [footerLegend]="footerLegend">
     <template #rows let-item="$implicit" let-i="index">
         <tr>
-            <td>{{item.code}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.pseudonym}}</td>
-            <td>
-            <a>
-                <i class="glyphicon glyphicon-pencil"></i>
-            </a>
-            </td>
+            <td>{{item.id}}</td>
+            <td>{{item.firstname}}</td>
+            <td>{{item.lastname}}</td>
+            <td>{{item.email}}</td>
         </tr>
     </template>
 </iq-bt-table>
