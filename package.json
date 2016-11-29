@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Angular 2 table based on bootstrap and webservices paginated requests",
   "repository": {
-    "url": "https://github.com/diegofsza/iq-bootstrap-table"
+    "url": "https://github.com/Innqube/iq-bootstrap-table"
   },
   "license": "MIT",
   "scripts": {
