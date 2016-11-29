@@ -9,7 +9,7 @@
 This table is an Angular 2 component based on Bootstrap3. Is prepared to handle server side requests for filtering, ordering and pagination of results, without needing to write a lot of boilerplate every time you have to add a new table view to your project.
 
 Included sample screenshot:
-![Screenshot](http://www.innqube.com/components/iq-bootstrap-table-screen01.png)
+![Screenshot](http://www.innqube.com/components/iq-bootstrap-table-screen02.png)
 
 Usage example:
 
