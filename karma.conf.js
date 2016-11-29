@@ -17,7 +17,8 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: './karma-shim.js', watched: false }
+      { pattern: './karma-shim.js', watched: false },
+      { pattern: '**/*.js.map', included: false }
     ],
 
     // list of files to exclude
@@ -26,7 +27,8 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './karma-shim.js': ['webpack', 'sourcemap']
+      './karma-shim.js': ['webpack', 'sourcemap'],
+      '**/*.js': ['sourcemap']
     },
 
     webpack: webpackConfig,
@@ -65,7 +67,17 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: true,
+
+    plugins: [
+      'karma-jasmine',
+      'karma-webpack',
+      'karma-phantomjs-launcher',
+      'karma-sourcemap-loader',
+      'karma-mocha',
+      'karma-mocha-reporter',
+      'karma-coverage'
+    ],
   };
 
   if (!isTestWatch) {
@@ -74,10 +86,10 @@ module.exports = function (config) {
     _config.coverageReporter = {
       dir: 'coverage/',
       reporters: [{
-        type: 'json',
+        type: 'html',
         dir: 'coverage',
-        subdir: 'json',
-        file: 'coverage-final.json'
+        subdir: '.',
+        file: 'coverage.html'
       }]
     };
   }
