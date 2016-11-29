@@ -8,6 +8,9 @@
 
 Angular 2 table based on bootstrap and webservices paginated requests 
 
+Included sample screenshot:
+[![Screenshot](http://www.innqube.com/components/iq-bootstrap-table-screen01.png]
+
 Usage example:
 
 *app.component.html:*
