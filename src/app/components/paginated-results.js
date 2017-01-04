@@ -1,7 +1,6 @@
 "use strict";
 class PaginatedResults {
-    constructor() {
-    }
+    constructor() { }
 }
 exports.PaginatedResults = PaginatedResults;
 //# sourceMappingURL=paginated-results.js.map

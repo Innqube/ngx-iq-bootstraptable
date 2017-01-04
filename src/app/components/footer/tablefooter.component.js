@@ -1,7 +1,18 @@
 "use strict";
-const core_1 = require('@angular/core');
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+const core_1 = require("@angular/core");
+const paginated_results_1 = require("../paginated-results");
+const footer_legend_1 = require("./footer-legend");
 const PAGES_LIMIT = 6;
-class TableFooterComponent {
+let TableFooterComponent = class TableFooterComponent {
     constructor() {
         this.onPageClicked = new core_1.EventEmitter();
         this.currentPage = 0;
@@ -67,19 +78,26 @@ class TableFooterComponent {
     getCurrentPage() {
         return this.currentPage;
     }
-}
-TableFooterComponent.decorators = [
-    { type: core_1.Component, args: [{
-                selector: 'iq-bt-footer',
-                templateUrl: './tablefooter.component.html',
-                styleUrls: ['./tablefooter.component.css']
-            },] },
-];
-TableFooterComponent.ctorParameters = [];
-TableFooterComponent.propDecorators = {
-    'paginatedResults': [{ type: core_1.Input },],
-    'onPageClicked': [{ type: core_1.Output },],
-    'footerLegend': [{ type: core_1.Input },],
 };
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", paginated_results_1.PaginatedResults)
+], TableFooterComponent.prototype, "paginatedResults", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], TableFooterComponent.prototype, "onPageClicked", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", footer_legend_1.FooterLegend)
+], TableFooterComponent.prototype, "footerLegend", void 0);
+TableFooterComponent = __decorate([
+    core_1.Component({
+        selector: 'iq-bt-footer',
+        templateUrl: './tablefooter.component.html',
+        styleUrls: ['./tablefooter.component.css']
+    }),
+    __metadata("design:paramtypes", [])
+], TableFooterComponent);
 exports.TableFooterComponent = TableFooterComponent;
 //# sourceMappingURL=tablefooter.component.js.map
