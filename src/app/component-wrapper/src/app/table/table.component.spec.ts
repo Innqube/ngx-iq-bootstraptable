@@ -1,8 +1,9 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
 import {FooterLegend} from '../footer/footer-legend';
 import {FooterComponent} from '../footer/footer.component';
 import {TableComponent} from './table.component';
+import {MockDataService} from '../../../../mock-data.service';
 
 class Person {
     firstname: string;
@@ -17,12 +18,13 @@ describe('TableComponent', () => {
         TestBed.configureTestingModule({
             declarations: [TableComponent, FooterComponent],
             imports: [],
-            providers: []
-        })
-            .compileComponents();
+            providers: [
+                MockDataService
+            ]
+        }).compileComponents();
     }));
 
-    beforeEach(() => {
+    beforeEach(inject([MockDataService], (mockDataService) => {
         fixture = TestBed.createComponent(TableComponent);
         component = fixture.componentInstance;
         component.columns = [{
@@ -59,8 +61,9 @@ describe('TableComponent', () => {
             }]
         };
         component.footerLegend = new FooterLegend();
+        component.dataSource = (rpd => mockDataService.listPersons(rpd.firstResult, rpd.count, rpd.orderBy));
         fixture.detectChanges();
-    });
+    }));
 
     it('should create', () => {
         expect(component).toBeTruthy();
@@ -69,8 +72,8 @@ describe('TableComponent', () => {
     it('should render header', () => {
         const element = fixture.debugElement.nativeElement;
         const headers = element.querySelectorAll('a');
-        expect(headers[0].text).toBe('First name');
-        expect(headers[1].text).toContain('Last name');
+        expect(headers[0].text.trim()).toBe('First name');
+        expect(headers[1].text.trim()).toBe('Last name');
     });
 
 });

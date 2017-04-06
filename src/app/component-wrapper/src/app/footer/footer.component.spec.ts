@@ -30,8 +30,8 @@ describe('FooterComponent', () => {
     });
 
     it('paginator should render', () => {
-        component.resultsPage.count = 5;
-        component.resultsPage.pageSize = 4;
+        component.resultsPage.total = 5;
+        component.resultsPage.count = 4;
         fixture.detectChanges();
         const element = fixture.nativeElement;
         expect(component.getTotalPages()).toBe(2);
@@ -39,30 +39,30 @@ describe('FooterComponent', () => {
     });
 
     it('paginator should not render', () => {
+        component.resultsPage.total = 5;
         component.resultsPage.count = 5;
-        component.resultsPage.pageSize = 5;
         fixture.detectChanges();
         const element = fixture.nativeElement;
         expect(element.querySelectorAll('.pagination').length).toBe(0);
     });
 
     it('paginator should have two pages', () => {
-        component.resultsPage.count = 5;
-        component.resultsPage.pageSize = 4;
+        component.resultsPage.total = 5;
+        component.resultsPage.count = 4;
         expect(component.getTotalPages()).toBe(2);
     });
 
     it('current page should begin at', () => {
-        component.resultsPage.count = 100;
-        component.resultsPage.pageSize = 5;
-        component.resultsPage.cursor = 0;
+        component.resultsPage.total = 100;
+        component.resultsPage.count = 5;
+        component.resultsPage.from = 0;
         expect(component.getPageBeginning()).toBe(1);
     });
 
     it('current page should end at', () => {
-        component.resultsPage.count = 100;
-        component.resultsPage.pageSize = 5;
-        component.resultsPage.cursor = 0;
+        component.resultsPage.total = 100;
+        component.resultsPage.count = 5;
+        component.resultsPage.from = 0;
         expect(component.getPageEnd()).toBe(5);
     });
 });
