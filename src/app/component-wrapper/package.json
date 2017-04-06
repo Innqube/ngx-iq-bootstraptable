@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/Innqube/iq-bootstrap-table"
+    "url": "https://github.com/Innqube/ngx-iq-bootstraptable"
   },
   "scripts": {
     "ng": "ng",
