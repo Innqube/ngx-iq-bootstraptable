@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs/Rx';
-import { PaginatedResults } from './components/paginated-results';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Rx';
+import {TableResultsPage} from './component-wrapper/src/app/table-results-page';
+import {ColumnOrder} from './component-wrapper/src/app/column-order';
 
 export class Person {
     id: number;
@@ -518,8 +519,8 @@ export class MockDataService {
 
     }
 
-    public listPersons(from: number, count: number, sort: string, order: string): Observable<PaginatedResults<Person>> {
-        if (sort !== undefined) {
+    public listPersons(from: number, count: number, orderBy: ColumnOrder[]): Observable<TableResultsPage<Person>> {
+        /*if (sort !== undefined) {
             this.persons.sort((person1: Person, person2: Person) => {
                 if ('asc' === order) {
                     if (person1[sort] > person2[sort]) {
@@ -538,13 +539,13 @@ export class MockDataService {
                 }
                 return 0;
             });
-        }
-        let result = this.persons.slice(from, from + count);
+        }*/
+        const result = this.persons.slice(from, from + count);
 
-        let pr = new PaginatedResults<Person>();
-        pr.count = 100;
-        pr.cursor = from;
-        pr.pageSize = count;
+        const pr = new TableResultsPage<Person>();
+        pr.count = count;
+        pr.from = from;
+        pr.total = this.persons.length;
         pr.results = result;
 
         return Observable.of(pr);

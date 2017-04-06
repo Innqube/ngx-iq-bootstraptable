@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr class="header">
+            <th *ngFor="let column of columns" [style.width]="column.width + '' + column.widthUnit + ''">
+                <div *ngIf="column.prop !== undefined" class="sortable">
+                    <a (click)="sort(column.prop)">
+                    {{column.name}}
+                </a>
+                    <i class="glyphicon glyphicon-chevron-up icon" *ngIf="getSortDirection(column) === 'asc'"></i>
+                    <i class="glyphicon glyphicon-chevron-down icon" *ngIf="getSortDirection(column) === 'desc'"></i>
+                </div>
+
+                <div *ngIf="column.prop === undefined">
+                    <span>
+                        {{column.name}}
+                    </span>
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-template ngFor [ngForOf]="resultsPage.results" [ngForTemplate]="rows"></ng-template>
+    </tbody>
+</table>
+<ngx-iq-footer [resultsPage]="resultsPage"
+               (onPageClicked)="onPageClicked($event)"
+               [footerLegend]="footerLegend"></ngx-iq-footer>

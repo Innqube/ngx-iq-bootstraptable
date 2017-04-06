@@ -1,22 +1,19 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 import {MockDataService, Person} from './mock-data.service';
-import {DataRequestConfig} from './components/data-request-config';
-import {BootstrapTableColumn} from './components/bootstrap-table-column';
-import {PaginatedResults} from './components/paginated-results';
-import {FooterLegend} from './components/footer/footer-legend';
-
-import '../style/app.scss';
+import {PageRequestData} from './component-wrapper/src/app/page-request-data';
+import {TableResultsPage} from './component-wrapper/src/app/table-results-page';
+import {TableColumn} from 'app/component-wrapper/src/app/table-column';
 
 @Component({
-    selector: 'my-app', // <my-app></my-app>
+    selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+    styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-    private paginatedResults: PaginatedResults<Person>;
-    private pageSize: number;
-    private columns: BootstrapTableColumn[] = [
+    dataSource: (requestPageData: PageRequestData) => Observable<TableResultsPage<Person>>;
+    columns: TableColumn[] = [
         {
             name: 'Id',
             prop: 'id',
@@ -39,22 +36,12 @@ export class AppComponent {
             widthUnit: '%'
         }
     ];
-    private footerLegend: FooterLegend = {
-        showingResults: 'Mostrando resultados',
-        of: 'de',
-        to: 'al',
-        noresults: 'Sin resultados'
-    };
 
     constructor(private mockDataService: MockDataService) {
     }
 
-    loadData(drc: DataRequestConfig) {
-        let sort = drc.orderBy ? drc.orderBy[0].property : null;
-        let order = drc.orderBy ? drc.orderBy[0].direction : null;
-        this
-            .mockDataService
-            .listPersons(drc.firstResult, drc.count, sort, order)
-            .subscribe((paginatedResults: PaginatedResults<Person>) => this.paginatedResults = paginatedResults);
+    ngOnInit(): void {
+        this.dataSource = (rpd => this.mockDataService.listPersons(rpd.firstResult, rpd.count, rpd.orderBy));
     }
+
 }
