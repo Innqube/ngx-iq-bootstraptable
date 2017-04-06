@@ -5,5 +5,5 @@ export class ColumnOrder {
 
     property: string;
     direction: 'asc' | 'desc';
-    
+
 }
