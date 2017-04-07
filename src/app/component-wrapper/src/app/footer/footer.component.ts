@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
     @Input() resultsPage: TableResultsPage<any>;
     @Output() onPageClicked: EventEmitter<number> = new EventEmitter<number>();
     @Input() footerLegend: FooterLegend;
-    private currentPage = 0;
+    @Input() currentPage;
 
     constructor() {
     }

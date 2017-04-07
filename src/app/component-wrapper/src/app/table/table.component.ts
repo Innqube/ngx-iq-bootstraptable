@@ -22,10 +22,9 @@ export class TableComponent<T> implements OnInit {
         to: 'to',
         noresults: 'No results'
     };
+    @Input() currentPage = 0;
     resultsPage: TableResultsPage<T>;
     @ContentChild('rows') rows: any;
-
-    private currentPage = 0;
     private columnOrdering: ColumnOrder[] = [];
 
     constructor() {
@@ -90,6 +89,10 @@ export class TableComponent<T> implements OnInit {
     private loadData(requestPageData: PageRequestData) {
         this.dataSource(requestPageData)
             .subscribe((resultsPage) => this.resultsPage = resultsPage);
+    }
+
+    refreshData() {
+        this.loadData(this.buildDataRequestConfig());
     }
 
     getSortDirection(column: TableColumn): 'asc' | 'desc' {
