@@ -1,7 +1,7 @@
 import {ColumnOrder} from './column-order';
 
 export class PageRequestData {
-    firstResult: number;
+    from: number;
     count: number;
     orderBy: ColumnOrder[];
 }

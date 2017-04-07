@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.dataSource = (rpd => this.mockDataService.listPersons(rpd.firstResult, rpd.count, rpd.orderBy));
+        this.dataSource = (rpd => this.mockDataService.listPersons(rpd.from, rpd.count, rpd.orderBy));
     }
 
 }

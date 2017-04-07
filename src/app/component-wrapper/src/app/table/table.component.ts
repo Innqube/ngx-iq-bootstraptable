@@ -81,7 +81,7 @@ export class TableComponent<T> implements OnInit {
 
     buildDataRequestConfig(): PageRequestData {
         const drc = new PageRequestData();
-        drc.firstResult = this.currentPage * this.pageSize;
+        drc.from = this.currentPage * this.pageSize;
         drc.count = this.pageSize;
         drc.orderBy = this.columnOrdering;
         return drc;
