@@ -52,8 +52,9 @@
     "codeCoverage": {
       "exclude": [
         "src/polyfills.ts",
-        "src/test/test.component.ts",
-        "src/test2/test2.component.ts",
+        "src/test.ts",
+        "src/app/test/test.component.ts",
+        "src/app/test2/test2.component.ts",
         "src/app/app.component.ts",
         "src/app/mock-data.service.ts"
       ]

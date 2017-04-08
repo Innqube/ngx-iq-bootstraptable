@@ -520,26 +520,9 @@ export class MockDataService {
     }
 
     public listPersons(from: number, count: number, orderBy: ColumnOrder[]): Observable<TableResultsPage<Person>> {
-        /*if (sort !== undefined) {
-            this.persons.sort((person1: Person, person2: Person) => {
-                if ('asc' === order) {
-                    if (person1[sort] > person2[sort]) {
-                        return 1;
-                    }
-                    if (person1[sort] < person2[sort]) {
-                        return -1;
-                    }
-                } else {
-                    if (person1[sort] < person2[sort]) {
-                        return 1;
-                    }
-                    if (person1[sort] > person2[sort]) {
-                        return -1;
-                    }
-                }
-                return 0;
-            });
-        }*/
+        if (orderBy && orderBy.length > 0) {
+            this.persons.sort(this.sortFunction(orderBy[0]));
+        }
         const result = this.persons.slice(from, from + count);
 
         const pr = new TableResultsPage<Person>();
@@ -549,6 +532,27 @@ export class MockDataService {
         pr.results = result;
 
         return Observable.of(pr);
+    }
+
+    private sortFunction(order) {
+        return (person1: Person, person2: Person) => {
+            if ('asc' === order.direction) {
+                if (person1[order.property] > person2[order.property]) {
+                    return 1;
+                }
+                if (person1[order.property] < person2[order.property]) {
+                    return -1;
+                }
+            } else {
+                if (person1[order.property] < person2[order.property]) {
+                    return 1;
+                }
+                if (person1[order.property] > person2[order.property]) {
+                    return -1;
+                }
+            }
+            return 0;
+        };
     }
 
 }
