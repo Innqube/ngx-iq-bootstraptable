@@ -9,11 +9,13 @@ import {NgxIqTableModule} from './component-wrapper/src/app/ngx-iq-table.module'
 import {MockDataService} from './mock-data.service';
 import {AppRoutingModule} from './app-routing.module';
 import {TestComponent} from './test-component/test.component';
+import {Test2Component} from './test2/test2.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        TestComponent
+        TestComponent,
+        Test2Component
     ],
     imports: [
         BrowserModule,

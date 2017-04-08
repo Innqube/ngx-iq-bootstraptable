@@ -5,6 +5,7 @@ import {TableColumn} from '../table-column';
 import {FooterLegend} from '../footer/footer-legend';
 import {Observable} from 'rxjs/Observable';
 import {ColumnOrder} from '../column-order';
+import {PaginationService} from '../pagination.service';
 
 @Component({
     selector: 'ngx-iq-table',
@@ -13,6 +14,7 @@ import {ColumnOrder} from '../column-order';
 })
 export class TableComponent<T> implements OnInit {
 
+    @Input() tableId: string;
     @Input() dataSource: (requestPageData: PageRequestData) => Observable<TableResultsPage<T>>;
     @Input() columns: TableColumn[] = [];
     @Input() pageSize: number;
@@ -27,18 +29,40 @@ export class TableComponent<T> implements OnInit {
     @ContentChild('rows') rows: any;
     private columnOrdering: ColumnOrder[] = [];
 
-    constructor() {
+    constructor(private paginationService: PaginationService) {
     }
 
     ngOnInit() {
         this.resultsPage = new TableResultsPage<any>();
         const drc = this.buildDataRequestConfig();
         this.loadData(drc);
+        this.resolveInitialPagination();
     }
 
+    private resolveInitialPagination() {
+        if (this.tableId) {
+            const tableState = this.paginationService.state[this.tableId];
+            if (tableState) {
+                this.columnOrdering = tableState.ordering;
+                this.onPageClicked(tableState.currentPage);
+            } else {
+                this.saveState();
+            }
+        }
+    }
+
+    private saveState() {
+        this.paginationService.state[this.tableId] = {
+            currentPage: this.currentPage,
+            ordering: this.columnOrdering
+        };
+    }
 
     onPageClicked(page: number) {
         this.currentPage = page;
+        if (this.tableId) {
+            this.saveState();
+        }
         const drc = this.buildDataRequestConfig();
         this.loadData(drc);
     }
