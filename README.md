@@ -2,7 +2,7 @@
 # NG2 IQ-BOOTSTRAP-TABLE
 [![InnQUbe](http://www.innqube.com/powered-by-innqube.png)](http://www.innqube.com/)
 
-[![Dependency Status](https://david-dm.org/Innqube/ngx-iq-bootstraptable)](https://david-dm.org/Innqube/ngx-iq-bootstraptable)
+[![dependencies Status](https://david-dm.org/Innqube/ngx-iq-bootstraptable/status.svg)](https://david-dm.org/Innqube/ngx-iq-bootstraptable)
 [![devDependency Status](https://david-dm.org/Innqube/ngx-iq-bootstraptable/dev-status.svg)](https://david-dm.org/Innqube/ngx-iq-bootstraptable#info=devDependencies)
 [![Code Climate](https://codeclimate.com/github/Innqube/ngx-iq-bootstraptable/badges/gpa.svg)](https://codeclimate.com/github/Innqube/ngx-iq-bootstraptable)
 [![Build Status](https://travis-ci.org/Innqube/ngx-iq-bootstraptable.svg?branch=master)](https://travis-ci.org/Innqube/ngx-iq-bootstraptable)
