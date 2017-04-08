@@ -13,6 +13,36 @@ This table is an Angular 2 component based on Bootstrap3. Is prepared to handle 
 Included sample screenshot:
 ![Screenshot](http://www.innqube.com/components/iq-bootstrap-table-screen02.png)
 
+---
+
+Configuration options (Inputs and Outputs)
+==========================================
+
+*@Input()* **dataSource: (requestPageData: PageRequestData) => Observable<TableResultsPage<T>>**: the function to get the data
+
+*@Input()* **tableId: string**: a table identifier used to keep table state when user navigates out of the component
+
+*@Input()* **columns: TableColumn[]**: the list of table columns
+
+*@Input()* **pageSize: number**: how many rows should be shown on each page
+
+*@Input()* **footerLegend: FooterLegend**: a configurable legend to show the current navigation page and total results
+
+*refreshData()* method provided in case you need to reload the view
+
+---
+
+*Messages*
+```javascript
+export class FooterLegend {
+    showingResults: string;
+    of: string;
+    to: string;
+    noresults: string;
+}
+```
+
+
 Usage example:
 
 *app.component.html:*
