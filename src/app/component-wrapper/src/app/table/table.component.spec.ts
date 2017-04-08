@@ -4,6 +4,7 @@ import {FooterLegend} from '../footer/footer-legend';
 import {FooterComponent} from '../footer/footer.component';
 import {TableComponent} from './table.component';
 import {MockDataService} from '../../../../mock-data.service';
+import {PaginationService} from '../pagination.service';
 
 class Person {
     firstname: string;
@@ -19,7 +20,8 @@ describe('TableComponent', () => {
             declarations: [TableComponent, FooterComponent],
             imports: [],
             providers: [
-                MockDataService
+                MockDataService,
+                PaginationService
             ]
         }).compileComponents();
     }));
@@ -61,7 +63,7 @@ describe('TableComponent', () => {
             }]
         };
         component.footerLegend = new FooterLegend();
-        component.dataSource = (rpd => mockDataService.listPersons(rpd.firstResult, rpd.count, rpd.orderBy));
+        component.dataSource = (rpd => mockDataService.listPersons(rpd.from, rpd.count, rpd.orderBy));
         fixture.detectChanges();
     }));
 

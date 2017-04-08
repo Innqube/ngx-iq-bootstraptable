@@ -8,7 +8,7 @@ import {AppComponent} from './app.component';
 import {NgxIqTableModule} from './component-wrapper/src/app/ngx-iq-table.module';
 import {MockDataService} from './mock-data.service';
 import {AppRoutingModule} from './app-routing.module';
-import {TestComponent} from './test-component/test.component';
+import {TestComponent} from './test/test.component';
 import {Test2Component} from './test2/test2.component';
 
 @NgModule({

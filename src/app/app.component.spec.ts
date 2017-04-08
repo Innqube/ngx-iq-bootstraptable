@@ -3,6 +3,7 @@ import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {NgxIqTableModule} from './component-wrapper/src/app/ngx-iq-table.module';
 import {MockDataService} from './mock-data.service';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
                 AppComponent
             ],
             imports: [
-                NgxIqTableModule
+                NgxIqTableModule,
+                RouterTestingModule
             ],
             providers: [
                 MockDataService
