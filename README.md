@@ -2,10 +2,10 @@
 # NG2 IQ-BOOTSTRAP-TABLE
 [![InnQUbe](http://www.innqube.com/powered-by-innqube.png)](http://www.innqube.com/)
 
-[![Dependency Status](https://david-dm.org/Innqube/iq-bootstrap-table.svg)](https://david-dm.org/Innqube/iq-bootstrap-table)
-[![devDependency Status](https://david-dm.org/Innqube/iq-bootstrap-table/dev-status.svg)](https://david-dm.org/Innqube/iq-bootstrap-table#info=devDependencies)
-[![Code Climate](https://codeclimate.com/github/Innqube/iq-bootstrap-table/badges/gpa.svg)](https://codeclimate.com/github/Innqube/iq-bootstrap-table)
-[![Build Status](https://travis-ci.org/Innqube/iq-bootstrap-table.svg?branch=master)](https://travis-ci.org/Innqube/iq-bootstrap-table)
+[![Dependency Status](https://david-dm.org/Innqube/ngx-iq-bootstraptable)](https://david-dm.org/Innqube/ngx-iq-bootstraptable)
+[![devDependency Status](https://david-dm.org/Innqube/ngx-iq-bootstraptable/dev-status.svg)](https://david-dm.org/Innqube/ngx-iq-bootstraptable#info=devDependencies)
+[![Code Climate](https://codeclimate.com/github/Innqube/ngx-iq-bootstraptable/badges/gpa.svg)](https://codeclimate.com/github/Innqube/ngx-iq-bootstraptable)
+[![Build Status](https://travis-ci.org/Innqube/ngx-iq-bootstraptable.svg?branch=master)](https://travis-ci.org/Innqube/ngx-iq-bootstraptable)
 [![codecov](https://codecov.io/gh/Innqube/ngx-iq-bootstraptable/branch/master/graph/badge.svg)](https://codecov.io/gh/Innqube/ngx-iq-bootstraptable)
 
 This table is an Angular 2 component based on Bootstrap3. Is prepared to handle server side requests for filtering, ordering and pagination of results, without needing to write a lot of boilerplate every time you have to add a new table view to your project.
