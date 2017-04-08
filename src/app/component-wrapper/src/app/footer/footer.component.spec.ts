@@ -65,4 +65,27 @@ describe('FooterComponent', () => {
         component.resultsPage.from = 0;
         expect(component.getPageEnd()).toBe(5);
     });
+
+    it('should emit event on page clicked', () => {
+        spyOn(component.onPageClicked, 'emit');
+        component.pageClicked(1);
+        fixture.detectChanges();
+        expect(component.onPageClicked.emit).toHaveBeenCalledWith(0);
+    });
+
+    it('should emit event on first clicked', () => {
+        spyOn(component.onPageClicked, 'emit');
+        component.onFirstClicked();
+        fixture.detectChanges();
+        expect(component.onPageClicked.emit).toHaveBeenCalledWith(0);
+    });
+
+    it('should emit event on last clicked', () => {
+        spyOn(component.onPageClicked, 'emit');
+        component.resultsPage.total = 100;
+        component.resultsPage.count = 5;
+        component.onLastClicked();
+        fixture.detectChanges();
+        expect(component.onPageClicked.emit).toHaveBeenCalledWith(19);
+    });
 });

@@ -51,7 +51,7 @@ export class TableComponent<T> implements OnInit {
         }
     }
 
-    private saveState() {
+    saveState() {
         this.tableStateService.state[this.tableId] = {
             currentPage: this.currentPage,
             ordering: this.columnOrdering

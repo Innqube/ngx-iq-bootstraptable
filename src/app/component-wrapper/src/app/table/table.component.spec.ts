@@ -6,6 +6,7 @@ import {TableComponent} from './table.component';
 import {MockDataService} from '../../../../mock-data.service';
 import {TableStateService} from '../table-state.service';
 import {Observable} from 'rxjs/Observable';
+import {PageRequestData} from '../page-request-data';
 
 class Person {
     firstname: string;
@@ -110,6 +111,68 @@ describe('TableComponent', () => {
             width: 50,
             widthUnit: '%'
         })).toBe('desc');
+    });
+
+    it('should add sorting columns', () => {
+        component.pageSize = 10;
+        fixture.detectChanges();
+        spyOn(component, 'dataSource').and.returnValue(Observable.empty());
+        component.sort('firstname');
+        component.sort('lastname');
+        const prd = new PageRequestData();
+        prd.from = 0;
+        prd.count = 10;
+        prd.orderBy = [{
+            property: 'lastname',
+            direction: 'asc'
+        },
+            {
+                property: 'firstname',
+                direction: 'asc'
+            }
+        ];
+        expect(component.dataSource).toHaveBeenCalledWith(prd);
+    });
+
+    it('should add sorting columns at the beggining', () => {
+        component.pageSize = 10;
+        fixture.detectChanges();
+        spyOn(component, 'dataSource').and.returnValue(Observable.empty());
+        component.sort('firstname');
+        component.sort('lastname');
+        component.sort('firstname');
+        const prd = new PageRequestData();
+        prd.from = 0;
+        prd.count = 10;
+        prd.orderBy = [{
+            property: 'firstname',
+            direction: 'desc'
+        },
+            {
+                property: 'lastname',
+                direction: 'asc'
+            }
+        ];
+        expect(component.dataSource).toHaveBeenCalledWith(prd);
+    });
+
+    it('should update current page onPageClicked', () => {
+        component.onPageClicked(2);
+        expect(component.currentPage).toBe(2);
+    });
+
+    it('should call dataSource onPageClicked', () => {
+        spyOn(component, 'dataSource').and.returnValue(Observable.empty());
+        component.onPageClicked(2);
+        expect(component.dataSource).toHaveBeenCalled();
+    });
+
+    it('should save state when id is set', () => {
+        component.tableId = 'tableId';
+        fixture.detectChanges();
+        spyOn(component, 'saveState').and.returnValue(Observable.empty());
+        component.onPageClicked(2);
+        expect(component.saveState).toHaveBeenCalled();
     });
 
 });
