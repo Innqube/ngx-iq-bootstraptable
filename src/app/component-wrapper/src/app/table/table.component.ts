@@ -34,10 +34,9 @@ export class TableComponent<T> implements OnInit {
     }
 
     ngOnInit() {
-        this.resultsPage = new TableResultsPage<any>();
-        const drc = this.buildDataRequestConfig();
-        this.loadData(drc);
+        this.resultsPage = new TableResultsPage<T>();
         this.resolveInitialPagination();
+        this.loadData(this.buildDataRequestConfig());
     }
 
     private resolveInitialPagination() {
@@ -53,7 +52,7 @@ export class TableComponent<T> implements OnInit {
 
     loadState(tableState: TableState) {
         this.columnOrdering = tableState.ordering;
-        this.onPageClicked(tableState.currentPage);
+        this.currentPage = tableState.currentPage;
     }
 
     saveState() {
