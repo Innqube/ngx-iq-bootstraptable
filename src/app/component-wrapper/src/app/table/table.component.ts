@@ -6,6 +6,7 @@ import {FooterLegend} from '../footer/footer-legend';
 import {Observable} from 'rxjs/Observable';
 import {ColumnOrder} from '../column-order';
 import {TableStateService} from '../table-state.service';
+import {TableState} from '../table-state';
 
 @Component({
     selector: 'ngx-iq-table',
@@ -43,12 +44,16 @@ export class TableComponent<T> implements OnInit {
         if (this.tableId) {
             const tableState = this.tableStateService.state[this.tableId];
             if (tableState) {
-                this.columnOrdering = tableState.ordering;
-                this.onPageClicked(tableState.currentPage);
+                this.loadState(tableState);
             } else {
                 this.saveState();
             }
         }
+    }
+
+    loadState(tableState: TableState) {
+        this.columnOrdering = tableState.ordering;
+        this.onPageClicked(tableState.currentPage);
     }
 
     saveState() {

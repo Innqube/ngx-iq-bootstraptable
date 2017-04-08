@@ -13,6 +13,18 @@ class Person {
     lastname: string;
 }
 
+class TableStateServiceMock {
+
+    state = [];
+
+    constructor() {
+        this.state['tableId'] = {
+            currentPage: 2,
+            ordering: []
+        };
+    }
+}
+
 describe('TableComponent', () => {
     let component: TableComponent<any>;
     let fixture: ComponentFixture<TableComponent<any>>;
@@ -23,7 +35,10 @@ describe('TableComponent', () => {
             imports: [],
             providers: [
                 MockDataService,
-                TableStateService
+                {
+                    provide: TableStateService,
+                    useClass: TableStateServiceMock
+                }
             ]
         }).compileComponents();
     }));
@@ -170,9 +185,17 @@ describe('TableComponent', () => {
     it('should save state when id is set', () => {
         component.tableId = 'tableId';
         fixture.detectChanges();
-        spyOn(component, 'saveState').and.returnValue(Observable.empty());
+        spyOn(component, 'saveState');
         component.onPageClicked(2);
         expect(component.saveState).toHaveBeenCalled();
+    });
+
+    it('should load state', () => {
+        component.tableId = 'tableId';
+        fixture.detectChanges();
+        spyOn(component, 'loadState');
+        component.ngOnInit();
+        expect(component.loadState).toHaveBeenCalled();
     });
 
 });
