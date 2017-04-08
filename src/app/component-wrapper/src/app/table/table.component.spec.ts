@@ -4,7 +4,7 @@ import {FooterLegend} from '../footer/footer-legend';
 import {FooterComponent} from '../footer/footer.component';
 import {TableComponent} from './table.component';
 import {MockDataService} from '../../../../mock-data.service';
-import {PaginationService} from '../pagination.service';
+import {TableStateService} from '../table-state.service';
 
 class Person {
     firstname: string;
@@ -21,7 +21,7 @@ describe('TableComponent', () => {
             imports: [],
             providers: [
                 MockDataService,
-                PaginationService
+                TableStateService
             ]
         }).compileComponents();
     }));

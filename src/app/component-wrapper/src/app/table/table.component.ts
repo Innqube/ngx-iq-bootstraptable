@@ -5,7 +5,7 @@ import {TableColumn} from '../table-column';
 import {FooterLegend} from '../footer/footer-legend';
 import {Observable} from 'rxjs/Observable';
 import {ColumnOrder} from '../column-order';
-import {PaginationService} from '../pagination.service';
+import {TableStateService} from '../table-state.service';
 
 @Component({
     selector: 'ngx-iq-table',
@@ -29,7 +29,7 @@ export class TableComponent<T> implements OnInit {
     @ContentChild('rows') rows: any;
     private columnOrdering: ColumnOrder[] = [];
 
-    constructor(private paginationService: PaginationService) {
+    constructor(private tableStateService: TableStateService) {
     }
 
     ngOnInit() {
@@ -41,7 +41,7 @@ export class TableComponent<T> implements OnInit {
 
     private resolveInitialPagination() {
         if (this.tableId) {
-            const tableState = this.paginationService.state[this.tableId];
+            const tableState = this.tableStateService.state[this.tableId];
             if (tableState) {
                 this.columnOrdering = tableState.ordering;
                 this.onPageClicked(tableState.currentPage);
@@ -52,7 +52,7 @@ export class TableComponent<T> implements OnInit {
     }
 
     private saveState() {
-        this.paginationService.state[this.tableId] = {
+        this.tableStateService.state[this.tableId] = {
             currentPage: this.currentPage,
             ordering: this.columnOrdering
         };

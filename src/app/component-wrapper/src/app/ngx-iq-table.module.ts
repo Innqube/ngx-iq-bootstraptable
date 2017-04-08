@@ -5,7 +5,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {TableComponent} from './table/table.component';
 import {FooterComponent} from './footer/footer.component';
-import {PaginationService} from './pagination.service';
+import {TableStateService} from './table-state.service';
 
 @NgModule({
     imports: [
@@ -19,7 +19,7 @@ import {PaginationService} from './pagination.service';
         TableComponent
     ],
     providers: [
-        PaginationService
+        TableStateService
     ]
 })
 export class NgxIqTableModule {
