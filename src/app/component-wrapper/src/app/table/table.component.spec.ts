@@ -5,6 +5,7 @@ import {FooterComponent} from '../footer/footer.component';
 import {TableComponent} from './table.component';
 import {MockDataService} from '../../../../mock-data.service';
 import {TableStateService} from '../table-state.service';
+import {Observable} from 'rxjs';
 
 class Person {
     firstname: string;
@@ -76,6 +77,39 @@ describe('TableComponent', () => {
         const headers = element.querySelectorAll('a');
         expect(headers[0].text.trim()).toBe('First name');
         expect(headers[1].text.trim()).toBe('Last name');
+    });
+
+    it('sort should trigger data load', () => {
+        spyOn(component, 'dataSource').and.returnValue(Observable.empty());
+        component.sort('firstname');
+        expect(component.dataSource).toHaveBeenCalled();
+    });
+
+    it('refreshData should trigger data load', () => {
+        spyOn(component, 'dataSource').and.returnValue(Observable.empty());
+        component.refreshData();
+        expect(component.dataSource).toHaveBeenCalled();
+    });
+
+    it('should sort ascendant on the first click', () => {
+        component.sort('firstname');
+        expect(component.getSortDirection({
+            name: 'First name',
+            prop: 'firstname',
+            width: 50,
+            widthUnit: '%'
+        })).toBe('asc');
+    });
+
+    it('should sort descendant on the second click', () => {
+        component.sort('firstname');
+        component.sort('firstname');
+        expect(component.getSortDirection({
+            name: 'First name',
+            prop: 'firstname',
+            width: 50,
+            widthUnit: '%'
+        })).toBe('desc');
     });
 
 });
