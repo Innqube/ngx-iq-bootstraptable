@@ -5,7 +5,7 @@ import {FooterComponent} from '../footer/footer.component';
 import {TableComponent} from './table.component';
 import {MockDataService} from '../../../../mock-data.service';
 import {TableStateService} from '../table-state.service';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
 
 class Person {
     firstname: string;
