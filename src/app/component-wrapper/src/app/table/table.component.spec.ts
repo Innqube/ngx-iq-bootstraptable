@@ -49,6 +49,7 @@ describe('TableComponent', () => {
         component.columns = [{
             name: 'First name',
             prop: 'firstname',
+            css: 'text-right',
             width: 50,
             widthUnit: '%'
         },
@@ -159,10 +160,11 @@ describe('TableComponent', () => {
         const prd = new PageRequestData();
         prd.from = 0;
         prd.count = 10;
-        prd.orderBy = [{
-            property: 'firstname',
-            direction: 'desc'
-        },
+        prd.orderBy = [
+            {
+                property: 'firstname',
+                direction: 'desc'
+            },
             {
                 property: 'lastname',
                 direction: 'asc'
@@ -196,6 +198,12 @@ describe('TableComponent', () => {
         spyOn(component, 'loadState');
         component.ngOnInit();
         expect(component.loadState).toHaveBeenCalled();
+    });
+
+    it('should add css classes to header', () => {
+        const element = fixture.debugElement.nativeElement;
+        const headers = element.querySelectorAll('th');
+        expect(headers[0].className).toBe('text-right');
     });
 
 });

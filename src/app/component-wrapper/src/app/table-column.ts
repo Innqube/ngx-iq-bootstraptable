@@ -4,5 +4,6 @@ export class TableColumn {
     prop?: string;
     width: number;
     widthUnit: string;
+    css?: string;
 
 }

@@ -1,7 +1,8 @@
 <table class="table">
     <thead>
     <tr class="header">
-        <th *ngFor="let column of columns" [style.width]="column.width + '' + column.widthUnit + ''">
+        <th *ngFor="let column of columns" [style.width]="column.width + '' + column.widthUnit + ''"
+            [class]="column.css">
             <div *ngIf="column.prop !== undefined" class="sortable">
                 <a (click)="sort(column.prop)">
                     {{column.name}}
