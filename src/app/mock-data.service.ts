@@ -519,13 +519,13 @@ export class MockDataService {
 
     }
 
-    public listPersons(from: number, count: number, orderBy: ColumnOrder[]): Observable<TableResultsPage<Person>> {
+    public listPersons(from: number, count: number, orderBy: ColumnOrder[]): Observable<TableResultsPage> {
         if (orderBy && orderBy.length > 0) {
             this.persons.sort(this.sortFunction(orderBy[0]));
         }
         const result = this.persons.slice(from, from + count);
 
-        const pr = new TableResultsPage<Person>();
+        const pr = new TableResultsPage();
         pr.count = count;
         pr.from = from;
         pr.total = this.persons.length;
