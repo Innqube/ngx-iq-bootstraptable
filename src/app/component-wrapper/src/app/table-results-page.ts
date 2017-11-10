@@ -1,8 +1,8 @@
-export class TableResultsPage<T> {
+export class TableResultsPage {
 
     from: number;
     count: number;
     total: number;
-    results: T[];
+    results: any[];
 
 }

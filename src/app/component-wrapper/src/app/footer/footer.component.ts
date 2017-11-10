@@ -11,7 +11,7 @@ const PAGES_LIMIT = 6;
 })
 export class FooterComponent implements OnInit {
 
-    @Input() resultsPage: TableResultsPage<any>;
+    @Input() resultsPage: TableResultsPage;
     @Output() onPageClicked: EventEmitter<number> = new EventEmitter<number>();
     @Input() footerLegend: FooterLegend;
     @Input() currentPage;

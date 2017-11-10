@@ -13,10 +13,10 @@ import {TableState} from '../table-state';
     templateUrl: './table.component.html',
     styleUrls: ['./table.component.css']
 })
-export class TableComponent<T> implements OnInit {
+export class TableComponent implements OnInit {
 
     @Input() tableId: string;
-    @Input() dataSource: (requestPageData: PageRequestData) => Observable<TableResultsPage<T>>;
+    @Input() dataSource: (requestPageData: PageRequestData) => Observable<TableResultsPage>;
     @Input() columns: TableColumn[] = [];
     @Input() pageSize: number;
     @Input() footerLegend: FooterLegend = {
@@ -26,7 +26,7 @@ export class TableComponent<T> implements OnInit {
         noresults: 'No results'
     };
     @Input() currentPage = 0;
-    resultsPage: TableResultsPage<T>;
+    resultsPage: TableResultsPage;
     @ContentChild('rows') rows: any;
     private columnOrdering: ColumnOrder[] = [];
 
@@ -34,7 +34,7 @@ export class TableComponent<T> implements OnInit {
     }
 
     ngOnInit() {
-        this.resultsPage = new TableResultsPage<T>();
+        this.resultsPage = new TableResultsPage();
         this.resolveInitialPagination();
         this.loadData(this.buildDataRequestConfig());
     }

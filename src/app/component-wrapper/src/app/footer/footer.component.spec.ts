@@ -20,7 +20,7 @@ describe('FooterComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(FooterComponent);
         component = fixture.componentInstance;
-        component.resultsPage = new TableResultsPage<any>();
+        component.resultsPage = new TableResultsPage();
         component.footerLegend = new FooterLegend();
         fixture.detectChanges();
     });
