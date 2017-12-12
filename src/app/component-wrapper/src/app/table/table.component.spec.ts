@@ -26,8 +26,8 @@ class TableStateServiceMock {
 }
 
 describe('TableComponent', () => {
-    let component: TableComponent<any>;
-    let fixture: ComponentFixture<TableComponent<any>>;
+    let component: TableComponent;
+    let fixture: ComponentFixture<TableComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
